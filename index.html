@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Chart</title>
+<!-- Styles -->
+<style>
+#chartdiv {
+  width: 450px;
+  height: 221px;
+}
+</style>
+</head>
+<!-- Resources -->
+<script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
+<script src="https://www.amcharts.com/lib/3/radar.js"></script>
+
+<link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+<script src="https://www.amcharts.com/lib/3/themes/none.js"></script>
+
+<!-- Chart code -->
+<body>
+<p style="font-family:verdana;"><b>Midori</b></p>
+<script>
+var chart = AmCharts.makeChart( "chartdiv", {
+  "type": "radar",
+  "theme": "none",
+  "dataProvider": [ {
+    "aspect": "Affordability",
+    "rating": 2
+  }, {
+    "aspect": "Food Quality",
+    "rating": 4.9
+  }, {
+    "aspect": "Atmosphere",
+    "rating": 4.9
+  }, {
+    "aspect": "Speed",
+    "rating": 1
+  } ],
+  "valueAxes": [ {
+    "axisTitleOffset": 20,
+    "minimum": 0,
+    "axisAlpha": 0.15
+  } ],
+  "startDuration": 2,
+  "graphs": [ {
+    "bullet": "round",
+    "lineThickness": 2,
+    "valueField": "rating"
+  } ],
+  "categoryField": "aspect",
+  "export": {
+    "enabled": true
+  }
+} );
+</script>
+<div id="chartdiv"></div>
+ </body>
+ </html>
+
+<!-- HTML -->
